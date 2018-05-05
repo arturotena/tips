@@ -8,12 +8,12 @@
   
   <h1>UNIX / MacOS</h1>
 
-  <h2>Count files</h2>
+  <h2>Count files recursively</h2>
 <p>
 find . -type f | wc -l
 </p>
 
-  <h2>Move files in subdirectories here</h2>
+  <h2>Move files in direct subdirectories here</h2>
 <p>
 for f in *; do cd "$f"; mv * ..; cd ..; done
 </p>
