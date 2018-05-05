@@ -18,9 +18,9 @@
   <h1>UNIX / MacOS</h1>
 
   <article>
-  <h2>Count files recursively</h2>
+  <h2>Count files recursively, ignore hidden (dot files)</h2>
   <p>
-    find . -type f | wc -l
+    find . -type f -and \( -not -name ".*" \) | wc -l
   </p>
   </article>
 
