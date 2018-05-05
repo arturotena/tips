@@ -1,6 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>UNIX / MacOS tips<title>
+</head>
+<body>
+  
 <h1>UNIX / MacOS
 
 <h2>Count files
-
 <pre>
 find . -type f | wc -l
+
+<h2>Move files in subdirectories here
+<pre>
+for f in *; do cd "$f"; mv * ..; cd ..; done
+
+<footer>###</footer>
+</body>
+</html>
