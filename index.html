@@ -3,25 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <title>UNIX / MacOS tips</title>
+  <style>
+	  article {
+		  display: inline;
+		  margin: 1em;
+		  padding: 1em;
+		  background: lightgrey;
+		  border-radius: 1em;
+	  }
+  </style>
 </head>
 <body>
   
   <h1>UNIX / MacOS</h1>
 
+  <article>
   <h2>Count files recursively</h2>
   <p>
     find . -type f | wc -l
   </p>
+  </article>
 
-  <h2>Move files in direct subdirectories here</h2>
-  <p>
-    for f in *; do cd "$f"; mv * ..; cd ..; done
-  </p>
+  <article>
+    <h2>Move files in direct subdirectories here</h2>
+    <p>
+      for f in *; do cd "$f"; mv * ..; cd ..; done
+    </p>
+  </article>
 
-  <h2>Unzip all files here</h2>
-  <p>
-    for f in *.zip; do unzip "$f"; done
-  </p>
+  <article>
+    <h2>Unzip all files here</h2>
+    <p>
+      for f in *.zip; do unzip "$f"; done
+    </p>
+  </article>
 
 <footer>###</footer>
   
