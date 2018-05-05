@@ -6,16 +6,19 @@
 </head>
 <body>
   
-<h1>UNIX / MacOS
+  <h1>UNIX / MacOS</h1>
 
-<h2>Count files
+  <h2>Count files</h2>
 <pre>
 find . -type f | wc -l
+</pre>
 
-<h2>Move files in subdirectories here
+  <h2>Move files in subdirectories here</h2>
 <pre>
 for f in *; do cd "$f"; mv * ..; cd ..; done
+</pre>
 
 <footer>###</footer>
+  
 </body>
 </html>
