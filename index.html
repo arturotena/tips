@@ -27,9 +27,70 @@
 	<article>
 		<h2>Proxy</h2>
 		<p>
-			<kbd>System.setProperty("http.proxyHost", "localhost");</kbd>
-			<br>
-			<kbd>System.setProperty("http.proxyPort", "8888");</kbd>
+			<kbd>
+				System.setProperty("http.proxyHost", "localhost");
+				<br>
+				System.setProperty("http.proxyPort", "8888");
+			</kbd>
+		</p>
+	</article>
+</section>
+
+<section>
+	<h1>Maven</h1>
+	
+	<article>
+		<h2>Executable JAR</h2>
+		<p>
+			<kbd>
+&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt;
+    &lt;configuration&gt;
+        &lt;archive&gt;
+            &lt;manifest&gt;
+                &lt;addClasspath&gt;true&lt;/addClasspath&gt;
+                &lt;classpathPrefix&gt;libs/&lt;/classpathPrefix&gt;
+                &lt;mainClass&gt;org.foo.bar.Main&lt;/mainClass&gt;
+            &lt;/manifest&gt;
+        &lt;/archive&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+
+&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;id&gt;copy-dependencies&lt;/id&gt;
+            &lt;phase&gt;prepare-package&lt;/phase&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;copy-dependencies&lt;/goal&gt;
+            &lt;/goals&gt;
+            &lt;configuration&gt;
+                &lt;outputDirectory&gt;
+                    ${project.build.directory}/libs
+                &lt;/outputDirectory&gt;
+            &lt;/configuration&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;
+			</kbd>
+		</p>
+	</article>
+</section>
+
+<section>
+	<h1>Java</h1>
+	
+	<article>
+		<h2>Proxy</h2>
+		<p>
+			<kbd>
+				System.setProperty("http.proxyHost", "localhost");
+				<br>
+				System.setProperty("http.proxyPort", "8888");
+			</kbd>
 		</p>
 	</article>
 </section>
