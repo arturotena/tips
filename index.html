@@ -6,8 +6,9 @@
 	<style>
 		body {
 			background: #e2e1e0;
+			background: rgb(225,231,246);
 		}
-		section, article {
+		article {
 			display: inline-block;
 			margin: 1em;
 			padding: 1em;
@@ -42,9 +43,39 @@
 	<article>
 		<h2>Executable JAR</h2>
 		<p>
-			<kbd>
-				&lt;plugin&gt;&#13;&#10;    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;&#13;&#10;    &lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt;&#13;&#10;    &lt;configuration&gt;&#13;&#10;        &lt;archive&gt;&#13;&#10;            &lt;manifest&gt;&#13;&#10;                &lt;addClasspath&gt;true&lt;/addClasspath&gt;&#13;&#10;                &lt;classpathPrefix&gt;libs/&lt;/classpathPrefix&gt;&#13;&#10;                &lt;mainClass&gt;org.foo.bar.Main&lt;/mainClass&gt;&#13;&#10;            &lt;/manifest&gt;&#13;&#10;        &lt;/archive&gt;&#13;&#10;    &lt;/configuration&gt;&#13;&#10;&lt;/plugin&gt;&#13;&#10;&#13;&#10;&lt;plugin&gt;&#13;&#10;    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;&#13;&#10;    &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;&#13;&#10;    &lt;executions&gt;&#13;&#10;        &lt;execution&gt;&#13;&#10;            &lt;id&gt;copy-dependencies&lt;/id&gt;&#13;&#10;            &lt;phase&gt;prepare-package&lt;/phase&gt;&#13;&#10;            &lt;goals&gt;&#13;&#10;                &lt;goal&gt;copy-dependencies&lt;/goal&gt;&#13;&#10;            &lt;/goals&gt;&#13;&#10;            &lt;configuration&gt;&#13;&#10;                &lt;outputDirectory&gt;&#13;&#10;                    ${project.build.directory}/libs&#13;&#10;                &lt;/outputDirectory&gt;&#13;&#10;            &lt;/configuration&gt;&#13;&#10;        &lt;/execution&gt;&#13;&#10;    &lt;/executions&gt;&#13;&#10;&lt;/plugin&gt;&#13;&#10;&#13;&#10;&#13;&#10;
-			</kbd>
+			<pre>
+&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt;
+    &lt;configuration&gt;
+        &lt;archive&gt;
+            &lt;manifest&gt;
+                &lt;addClasspath&gt;true&lt;/addClasspath&gt;
+                &lt;classpathPrefix&gt;libs/&lt;/classpathPrefix&gt;
+                &lt;mainClass&gt;org.foo.bar.Main&lt;/mainClass&gt;
+            &lt;/manifest&gt;
+        &lt;/archive&gt;
+    &lt;/configuration&gt;
+&lt;/plugin&gt;
+&lt;plugin&gt;
+    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+    &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;
+    &lt;executions&gt;
+        &lt;execution&gt;
+            &lt;id&gt;copy-dependencies&lt;/id&gt;
+            &lt;phase&gt;prepare-package&lt;/phase&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;copy-dependencies&lt;/goal&gt;
+            &lt;/goals&gt;
+            &lt;configuration&gt;
+                &lt;outputDirectory&gt;
+                    ${project.build.directory}/libs
+                &lt;/outputDirectory&gt;
+            &lt;/configuration&gt;
+        &lt;/execution&gt;
+    &lt;/executions&gt;
+&lt;/plugin&gt;
+			</pre>
 		</p>
 	</article>
 </section>
