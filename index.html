@@ -29,28 +29,36 @@
 </section>
 	
 <section>
-  <h1>UNIX / MacOS</h1>
-
-  <article>
-  <h2>Count files recursively, ignore hidden (dot files)</h2>
-  <p>
-    find . -type f -and \( -not -name ".*" \) | wc -l
-  </p>
-  </article>
-
-  <article>
-    <h2>Move files in direct subdirectories here</h2>
-    <p>
-      for f in *; do cd "$f"; mv * ..; cd ..; done
-    </p>
-  </article>
-
-  <article>
-    <h2>Unzip all files here</h2>
-    <p>
-      for f in *.zip; do unzip "$f"; done
-    </p>
-  </article>
+	<h1>UNIX / MacOS</h1>
+	
+	<article>
+		<h2>Count files recursively, ignore hidden (dot files)</h2>
+		<p>
+			<kbd>find . -type f -and \( -not -name ".*" \) | wc -l</kbd>
+		</p>
+	</article>
+</section>
+	
+<section>
+	<h1>UNIX / MacOS</h1>
+	
+	<article>
+		<h2>Move files in direct subdirectories here</h2>
+		<p>
+			<kbd>for f in *; do cd "$f"; mv * ..; cd ..; done</kbd>
+		</p>
+	</article>
+</section>
+	
+<section>
+	<h1>UNIX / MacOS</h1>
+	
+	<article>
+		<h2>Unzip all files here</h2></h2>
+		<p>
+			<kbd>for f in *.zip; do unzip "$f"; done</kbd>
+		</p>
+	</article>
 </section>
 		
 <footer>###</footer>
