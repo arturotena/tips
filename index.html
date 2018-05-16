@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Computing and programming tips</title>
-  <style>
-	  article {
-		  display: inline-block;
-		  margin: 1em;
-		  padding: 1em;
-		  background: lightgrey;
-      			border-radius: 1em;
-	  }
-  </style>
+	<meta charset="UTF-8">
+	<title>Computing and programming tips</title>
+	<style>
+		body {
+			background: #ddd;
+		}
+		article {
+			display: inline-block;
+			margin: 1em;
+			padding: 1em;
+			background: lightgrey;
+			border-radius: 1em;
+			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); /*https://codepen.io/sdthornton/pen/wBZdXq*/
+		}
+		h2 {
+			margin-top: 0;
+		}
+	</style>
 </head>
 <body>
 
@@ -29,7 +36,7 @@
 </section>
 	
 <section>
-	<h1>UNIX / MacOS</h1>
+	<h1>MacOS / UNIX</h1>
 	
 	<article>
 		<h2>Count files recursively, ignore hidden (dot files)</h2>
@@ -37,10 +44,6 @@
 			<kbd>find . -type f -and \( -not -name ".*" \) | wc -l</kbd>
 		</p>
 	</article>
-</section>
-	
-<section>
-	<h1>UNIX / MacOS</h1>
 	
 	<article>
 		<h2>Move files in direct subdirectories here</h2>
@@ -48,11 +51,7 @@
 			<kbd>for f in *; do cd "$f"; mv * ..; cd ..; done</kbd>
 		</p>
 	</article>
-</section>
-	
-<section>
-	<h1>UNIX / MacOS</h1>
-	
+
 	<article>
 		<h2>Unzip all files here</h2></h2>
 		<p>
