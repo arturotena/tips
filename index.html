@@ -84,7 +84,28 @@
 		</p>
 	</article>
 </section>
+
+<section>
+	<h1>Jakarta EE / Java EE</h1>
 	
+	<article>
+		<h2>Inject DataSource</h2>
+		<p>
+			<kbd>
+				@amp;Resource(lookup = "jdbc/foo")
+				<br>
+				private javax.sql.DataSource ds;
+			</kbd>
+		</p>
+		<p>
+			Do not use <kbd>@amp;Resource(name = "jdbc/foo")</kbd>
+			On the reference implementation (Glassfish) it will
+			try to connect to Derby to search that database.
+		</p>
+	</article>
+</section>
+	
+
 <section>
 	<h1>MacOS / UNIX</h1>
 	
