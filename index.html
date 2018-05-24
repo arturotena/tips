@@ -13,6 +13,10 @@
 			background: #e2e1e0;
 			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 		}
+		body > section {
+			border: 2px dashed darkblue;
+			background: white;
+		}
 		article {
 			display: inline-block;
 			margin: 1em;
@@ -28,117 +32,121 @@
 <body>
 
 <section>
-	<h1>Java</h1>
-	
-	<article>
-		<h2>Proxy</h2>
-		<p>
-			<kbd>
-				System.setProperty("http.proxyHost", "localhost");
-				<br>
-				System.setProperty("http.proxyPort", "8888");
-			</kbd>
-		</p>
-	</article>
-</section>
+	<h1>Programming tips</h1>
 
-<section>
-	<h1>Jakarta EE / Java EE</h1>
-	
-	<article>
-		<h2>Inject DataSource</h2>
-		<p>
-			<kbd>
-				@Resource(lookup = "jdbc/foo")
-				<br>
-				private javax.sql.DataSource ds;
-			</kbd>
-		</p>
-		<p>
-			Do not use <kbd>@Resource(name = "jdbc/foo")</kbd>
-			On the reference implementation (Glassfish) it will
-			try to connect to Derby.
-		</p>
-	</article>
-</section>
-	
-<section>
-	<h1>Maven</h1>
-	
-	<article>
-		<h2>Executable JAR</h2>
-		<p>
-			<pre>
-&lt;plugin&gt;
-    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-    &lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt;
-    &lt;configuration&gt;
-        &lt;archive&gt;
-            &lt;manifest&gt;
-                &lt;addClasspath&gt;true&lt;/addClasspath&gt;
-                &lt;classpathPrefix&gt;libs/&lt;/classpathPrefix&gt;
-                &lt;mainClass&gt;org.foo.bar.Main&lt;/mainClass&gt;
-            &lt;/manifest&gt;
-        &lt;/archive&gt;
-    &lt;/configuration&gt;
-&lt;/plugin&gt;
-&lt;plugin&gt;
-    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-    &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;
-    &lt;executions&gt;
-        &lt;execution&gt;
-            &lt;id&gt;copy-dependencies&lt;/id&gt;
-            &lt;phase&gt;prepare-package&lt;/phase&gt;
-            &lt;goals&gt;
-                &lt;goal&gt;copy-dependencies&lt;/goal&gt;
-            &lt;/goals&gt;
-            &lt;configuration&gt;
-                &lt;outputDirectory&gt;
-                    ${project.build.directory}/libs
-                &lt;/outputDirectory&gt;
-            &lt;/configuration&gt;
-        &lt;/execution&gt;
-    &lt;/executions&gt;
-&lt;/plugin&gt;
-			</pre>
-		</p>
-	</article>
-	
-	<article>
-		<h2>Encrypted password on <kbd>settings.xml</h2>
-		<p>
-			TBD
-		</p>
-		<ul>
-			<li><a href="https://stackoverflow.com/questions/12299181/use-encrypted-data-in-a-maven-pom">https://stackoverflow.com/questions/12299181/use-encrypted-data-in-a-maven-pom</a></li>
-			<li><a href="https://stackoverflow.com/questions/11314379/maven-password-encryption-for-other-properties">https://stackoverflow.com/questions/11314379/maven-password-encryption-for-other-properties</a></li>
-		</ul>
-	</article>
-</section>
+	<section>
+		<h2>Java</h2>
 
+		<article>
+			<h3>Proxy</h3>
+			<p>
+				<kbd>
+					System.setProperty("http.proxyHost", "localhost");
+					<br>
+					System.setProperty("http.proxyPort", "8888");
+				</kbd>
+			</p>
+		</article>
+	</section>
 
+	<section>
+		<h2>Jakarta EE / Java EE</h2>
+
+		<article>
+			<h3>Inject DataSource</h3>
+			<p>
+				<kbd>
+					@Resource(lookup = "jdbc/foo")
+					<br>
+					private javax.sql.DataSource ds;
+				</kbd>
+			</p>
+			<p>
+				Do not use <kbd>@Resource(name = "jdbc/foo")</kbd>
+				On the reference implementation (Glassfish) it will
+				try to connect to Derby.
+			</p>
+		</article>
+	</section>
+
+	<section>
+		<h2>Maven</h2>
+
+		<article>
+			<h3>Executable JAR</h3>
+			<p>
+				<pre>
+	&lt;plugin&gt;
+	    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+	    &lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt;
+	    &lt;configuration&gt;
+		&lt;archive&gt;
+		    &lt;manifest&gt;
+			&lt;addClasspath&gt;true&lt;/addClasspath&gt;
+			&lt;classpathPrefix&gt;libs/&lt;/classpathPrefix&gt;
+			&lt;mainClass&gt;org.foo.bar.Main&lt;/mainClass&gt;
+		    &lt;/manifest&gt;
+		&lt;/archive&gt;
+	    &lt;/configuration&gt;
+	&lt;/plugin&gt;
+	&lt;plugin&gt;
+	    &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+	    &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;
+	    &lt;executions&gt;
+		&lt;execution&gt;
+		    &lt;id&gt;copy-dependencies&lt;/id&gt;
+		    &lt;phase&gt;prepare-package&lt;/phase&gt;
+		    &lt;goals&gt;
+			&lt;goal&gt;copy-dependencies&lt;/goal&gt;
+		    &lt;/goals&gt;
+		    &lt;configuration&gt;
+			&lt;outputDirectory&gt;
+			    ${project.build.directory}/libs
+			&lt;/outputDirectory&gt;
+		    &lt;/configuration&gt;
+		&lt;/execution&gt;
+	    &lt;/executions&gt;
+	&lt;/plugin&gt;
+				</pre>
+			</p>
+		</article>
+
+		<article>
+			<h3>Encrypted password on <kbd>settings.xml</h3>
+			<p>
+				TBD
+			</p>
+			<ul>
+				<li><a href="https://stackoverflow.com/questions/12299181/use-encrypted-data-in-a-maven-pom">https://stackoverflow.com/questions/12299181/use-encrypted-data-in-a-maven-pom</a></li>
+				<li><a href="https://stackoverflow.com/questions/11314379/maven-password-encryption-for-other-properties">https://stackoverflow.com/questions/11314379/maven-password-encryption-for-other-properties</a></li>
+			</ul>
+		</article>
+	</section>
+
+	</section>
+	
 <section>
 	<h1>Computing tips</h1>
 
 	<section>
-		<h1>MacOS / UNIX</h1>
+		<h2>MacOS / UNIX</h2>
 
 		<article>
-			<h2>Count files recursively, ignore hidden (dot files)</h2>
+			<h3>Count files recursively, ignore hidden (dot files)</h3>
 			<p>
 				<kbd>find . -type f -and \( -not -name ".*" \) | wc -l</kbd>
 			</p>
 		</article>
 
 		<article>
-			<h2>Move files in direct subdirectories here</h2>
+			<h3>Move files in direct subdirectories here</h3>
 			<p>
 				<kbd>for f in *; do cd "$f"; mv * ..; cd ..; done</kbd>
 			</p>
 		</article>
 
 		<article>
-			<h2>Unzip all files here</h2></h2>
+			<h3>Unzip all files here</h3>
 			<p>
 				<kbd>for f in *.zip; do unzip "$f"; done</kbd>
 			</p>
@@ -146,10 +154,10 @@
 	</section>
 	
 	<section>
-		<h1>Microsoft Office (Word, Excel, etc.)</h1>
+		<h2>Microsoft Office (Word, Excel, etc.)</h2>
 		
 		<article>
-			<h2>Recover unsaved files</h2>
+			<h3>Recover unsaved files</h3>
 			<p>
 				File tab / Manage Documents / Manage Document button / Recover Unsaved Documents
 			</p>
