@@ -62,32 +62,6 @@
 	</article>
 </section>
 	
-
-<section>
-	<h1>MacOS / UNIX</h1>
-	
-	<article>
-		<h2>Count files recursively, ignore hidden (dot files)</h2>
-		<p>
-			<kbd>find . -type f -and \( -not -name ".*" \) | wc -l</kbd>
-		</p>
-	</article>
-	
-	<article>
-		<h2>Move files in direct subdirectories here</h2>
-		<p>
-			<kbd>for f in *; do cd "$f"; mv * ..; cd ..; done</kbd>
-		</p>
-	</article>
-
-	<article>
-		<h2>Unzip all files here</h2></h2>
-		<p>
-			<kbd>for f in *.zip; do unzip "$f"; done</kbd>
-		</p>
-	</article>
-</section>
-
 <section>
 	<h1>Maven</h1>
 	
@@ -140,6 +114,50 @@
 			<li><a href="https://stackoverflow.com/questions/11314379/maven-password-encryption-for-other-properties">https://stackoverflow.com/questions/11314379/maven-password-encryption-for-other-properties</a></li>
 		</ul>
 	</article>
+</section>
+
+
+<section>
+	<h1>Computing tips</h1>
+
+	<section>
+		<h1>MacOS / UNIX</h1>
+
+		<article>
+			<h2>Count files recursively, ignore hidden (dot files)</h2>
+			<p>
+				<kbd>find . -type f -and \( -not -name ".*" \) | wc -l</kbd>
+			</p>
+		</article>
+
+		<article>
+			<h2>Move files in direct subdirectories here</h2>
+			<p>
+				<kbd>for f in *; do cd "$f"; mv * ..; cd ..; done</kbd>
+			</p>
+		</article>
+
+		<article>
+			<h2>Unzip all files here</h2></h2>
+			<p>
+				<kbd>for f in *.zip; do unzip "$f"; done</kbd>
+			</p>
+		</article>
+	</section>
+	
+	<section>
+		<h1>Microsoft Office (Word, Excel, etc.)</h1>
+		
+		<article>
+			<h2>Recover unsaved files</h2>
+			<p>
+				File tab / Manage Documents / Manage Document button / Recover Unsaved Documents
+			</p>
+			<p>
+				<kbd>%userprofile%\AppData\Local\Microsoft\Office\UnsavedFiles</kbd>
+			</p>
+		</article>
+	</section>
 </section>
 
 <footer>###</footer>
