@@ -56,6 +56,22 @@
 				</kbd>
 			</p>
 		</article>
+		
+		<article>
+			<h3>Parse JSON easily</h3>
+			<p>
+				<pre>
+// It uses Jackson jr: https://github.com/FasterXML/jackson-jr
+import com.fasterxml.jackson.jr.ob.JSON;
+Map map = JSON.std.mapFrom(strJSON);
+String foo = (String) map.get("Foo");
+List bar = (List) map.get("Bar");
+Map baz = (Map) map.get("Baz");
+// See also: "Jackson Jr for casual JSON reading/writing from Java" https://medium.com/@cowtowncoder/jackson-jr-for-casual-json-reading-writing-from-java-f5d379d4bcb6#61e8
+				</pre>
+			</p>
+		</article>
+		
 	</section>
 
 	<section>
