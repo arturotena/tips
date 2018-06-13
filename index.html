@@ -47,6 +47,15 @@
 				</kbd>
 			</p>
 		</article>
+
+		<article>
+			<h3>Find no final static variables</h3>
+			<p>
+				<kbd>
+					findstr /s static *.java | findstr /v final | findstr /v ( | findstr /v import | findstr /v enum | findstr /v /r "static\ \{" | more
+				</kbd>
+			</p>
+		</article>
 	</section>
 
 	<section>
