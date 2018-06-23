@@ -171,6 +171,27 @@ Map baz = (Map) map.get("Baz");
 			</p>
 	</section>
 
+	<section>
+		<h2>jTDS</h2>
+
+		<article>
+			<h3>List connections</h3>
+			<p>
+				<pre>
+SELECT spid, hostname, program_name, loginame, login_time
+FROM master.dbo.sysprocesses
+WHERE loginame LIKE '%myloginname%'
+				</pre>
+			</p>
+			<p>
+				<a href="https://docs.microsoft.com/en-us/sql/relational-databases/databases/master-database">More information about the <kbd>master</kbd> database</a>.
+			</p>
+		</article>
+	</section>
+
+
+		http://jtds.sourceforge.net/faq.html
+		
 </section>
 	
 <section>
