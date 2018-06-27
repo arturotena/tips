@@ -98,6 +98,51 @@ Map baz = (Map) map.get("Baz");
 	</section>
 
 	<section>
+		<h2>Spring</h2>
+
+		<article>
+			<h3>Inject an EJB on Spring</h3>
+			<p>
+				<pre>
+// MyComponent.java
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class MyComponent implements MyComponentInterface {
+
+	/**
+	Inject a Java EE EJB on a Spring component.
+	
+	About java:module, see &quot;32.4.1.1 Portable JNDI Syntax&quot;
+	on the Java EE 7 Tutorial &lt;https://docs.oracle.com/javaee/7/tutorial/ejb-intro004.htm#GIPJF&gt;
+	 */
+	@EJB(mappedName = &quot;java:module/MyEJB&quot;)
+	private MyEJB myEJB;
+
+	// ...
+}	
+
+
+// MyEJB.java
+
+import javax.ejb.Stateless;
+
+@Stateless
+public class MyEJB {
+	// ...
+}
+				</pre>
+			</p>
+			<p>
+				Do not use <kbd>@Resource(name = "jdbc/foo")</kbd>
+				On the reference implementation (Glassfish) it will
+				try to connect to Derby.
+			</p>
+		</article>
+	</section>
+
+	<section>
 		<h2>HTML</h2>
 		
 		<article>
