@@ -111,12 +111,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyComponent implements MyComponentInterface {
 
-	/**
-	Inject a Java EE EJB on a Spring component.
-	
-	About java:module, see &quot;32.4.1.1 Portable JNDI Syntax&quot;
-	on the Java EE 7 Tutorial &lt;https://docs.oracle.com/javaee/7/tutorial/ejb-intro004.htm#GIPJF&gt;
-	 */
 	@EJB(mappedName = &quot;java:module/MyEJB&quot;)
 	private MyEJB myEJB;
 
@@ -135,9 +129,8 @@ public class MyEJB {
 				</pre>
 			</p>
 			<p>
-				Do not use <kbd>@Resource(name = "jdbc/foo")</kbd>
-				On the reference implementation (Glassfish) it will
-				try to connect to Derby.
+				About <kbd>java:module</kbd>, see &quot;32.4.1.1 Portable JNDI Syntax&quot; on the
+				<a href="https://docs.oracle.com/javaee/7/tutorial/ejb-intro004.htm#GIPJF">Java EE 7 Tutorial</a>.
 			</p>
 		</article>
 	</section>
